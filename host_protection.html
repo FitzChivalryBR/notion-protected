@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protected Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    input {
+      margin: 10px 0;
+      padding: 10px;
+      width: 200px;
+    }
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Enter Password to Access</h1>
+  <input type="password" id="password" placeholder="Enter Password">
+  <button onclick="checkPassword()">Submit</button>
+  <p id="message" style="color: red;"></p>
+  
+  <script>
+    function checkPassword() {
+      const password = document.getElementById('password').value;
+      const correctPassword = 'yourpassword123'; // Set your password here
+
+      if (password === correctPassword) {
+        window.location.href = 'https://www.notion.so/your-page-id'; // Replace with your Notion page URL
+      } else {
+        document.getElementById('message').textContent = 'Incorrect password. Please try again.';
+      }
+    }
+  </script>
+</body>
+</html>
